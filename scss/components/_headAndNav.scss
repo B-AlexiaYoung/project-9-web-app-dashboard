@@ -1,3 +1,34 @@
 // Style header and Navigation.
 
 //====== header  =======
+//style icons in header
+
+//placerholder for size of icons 
+%icons{
+    height:30px;
+    width:30px;
+    margin-right:80px;
+
+    @include mediaQry(medium){
+    margin-right:40px;
+    }
+}
+.smIcons{
+    @extend %icons;
+   // padding:.1em;
+}
+.smPhotos{
+  height:40px;
+  width:40px;
+  display:inline-block;
+
+  border-radius:50%;
+margin-bottom: 1em;
+
+}
+//li:last-of-type
+#user{
+    @include mediaQry(medium){
+    border-left: 1px solid #314282;
+    }
+}

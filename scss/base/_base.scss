@@ -1,0 +1,79 @@
+// base styles
+
+
+* {
+    box-sizing: border-box;
+}
+
+//wrapper for flexbox
+.wrapper{
+    display:flex;
+    width: 100%;
+    @include mediaQry(medium){
+    }
+    
+
+}
+header{
+    background-color: $duskyPurple;
+    display:flex;
+    width:100%;
+}
+ul{
+    display:flex;
+    list-style-type: none;
+  margin:0;
+  padding:10px;
+  margin-top:0;
+text-align:center;
+  }
+  
+header,ul, li{
+    display:block;
+    flex-direction: column;
+    align-content:center;
+    //justify-content:center;
+    margin:auto;
+    @include mediaQry(medium){
+    display:inline-block;
+    flex-direction:row;    
+    //padding: .5em,0.1em,1em,0.1em;
+    }
+}  
+ul,li{
+    padding: .5em 0.1em 1em 0.1em;
+ 
+}
+/*ul:first-child{
+margin-right:10.5em;
+}*/
+h1{
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 2.5em;
+    color:$fog;
+    margin-top:0;
+    margin-bottom:0;
+    @include mediaQry(medium) {
+        margin-right: 7em;
+    }
+    @include mediaQry(large) {
+        margin-right: 25em;
+    }
+}
+h3{
+    font-family: 'Roboto', sans-serif;
+    justify-content:center;
+    display:inline-block;
+}
+p
+{font-family: 'Roboto', sans-serif;
+}
+/*ul.firstChild{
+    padding-right:3em;
+}*/
+img{
+    float: left;
+    @include mediaQry(medium){
+        
+    }
+}
