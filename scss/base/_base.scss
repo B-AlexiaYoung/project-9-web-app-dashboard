@@ -1,79 +1,191 @@
 // base styles
-
+ body{
+  width:  100vw;
+}
 
 * {
     box-sizing: border-box;
+}
+//CSS GRID SETUP
+.maincontainer{
+display:grid;
+height:100vh;
+//grid-template-columns: minmax(0px,60px) 1fr;
+grid-template-columns: 1fr;
+
+grid-template-rows: 1fr;
+//grid-gap:10px;
+grid-template-areas: 
+    "header "
+    "nav"
+   
+    "main";
+    @include mediaQry(medium){
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: calc(1fr - 60px);
+        
+
+        grid-template-areas:
+        "header header"
+        "nav main";
+    
+        
+    }
+}
+
+
+
+main{
+    grid-area:main;
+background-color:$soupyFog;
+width:calc(100%-60px)
+}
+
+nav{
+    grid-area:nav;
 }
 
 //wrapper for flexbox
 .wrapper{
     display:flex;
-    width: 100%;
+    flex-direction:row;
+    //justify-content:center;
+    //align-items:center;
+    //width:100vw;
     @include mediaQry(medium){
+        flex-direction:row;
+        justify-content: space-between;
     }
-    
+}
+ .co{
+     flex-direction:row;
+     justify-content: flex-start;
+
+     display:inline;
+    @include mediaQry(medium){
+     justify-content:flex-end;
+ }
 
 }
-header{
-    background-color: $duskyPurple;
+.logo{
+    font-weight:200;
+    margin-right:70px;
+    //font-size:30px;
+}
+#member{
+display:inline-block;
+}
+.navWrap{
     display:flex;
-    width:100%;
+}
+.wrapHead{
+    display:flex;
+    justify-content:flex-end;
+    @include mediaQry(medium){
+        margin-top:-30px;
+    }
+}
+#pics{
+align-items:flex-start;
+}
+header{
+    grid-area: header;
+    background-color: $duskyPurple;
+    //display:flex;
+    
 }
 ul{
     display:flex;
     list-style-type: none;
-  margin:0;
-  padding:10px;
-  margin-top:0;
-text-align:center;
+    margin:0;
+    padding:10px;
+    margin-top:0;
+    text-align:center;
+    //background-color: $duskyPurple;
   }
-  
+ header{
+     width:100vw;
+     padding-top: 10px;
+     padding-left:20px;
+
+ } 
 header,ul, li{
     display:block;
-    flex-direction: column;
-    align-content:center;
+    flex-direction: row;
+    display:inline-block;
+
+    
     //justify-content:center;
     margin:auto;
     @include mediaQry(medium){
-    display:inline-block;
-    flex-direction:row;    
-    //padding: .5em,0.1em,1em,0.1em;
+        display:inline-block;
+        flex-direction:row;    
+        margin:0;
+        align-content:center;
+        //padding: .5em,0.1em,1em,0.1em;
     }
 }  
 ul,li{
+    padding:.1em 1em .5em .5em;
+    @include mediaQry(medium){
     padding: .5em 0.1em 1em 0.1em;
- 
+    }
 }
 /*ul:first-child{
 margin-right:10.5em;
 }*/
 h1{
-    font-family: 'Sedgwick Ave Display', cursive;
-    font-size: 2.5em;
+    font-size:30px;
+    display:inline;
+    font-family: 'Open Sans', sans-serif;
+    //font-size: 2.5em;
     color:$fog;
-    margin-top:0;
-    margin-bottom:0;
+   // margin-top:0;
+    //margin-bottom:0;
     @include mediaQry(medium) {
-        margin-right: 7em;
+        //margin-right: 9.5em;
+        margin-right:auto;
     }
     @include mediaQry(large) {
-        margin-right: 25em;
+        //margin-right: 16em;
     }
 }
 h3{
-    font-family: 'Roboto', sans-serif;
+    font-family: $font;
     justify-content:center;
     display:inline-block;
+    margin-right: 1.5em;
+
 }
-p
-{font-family: 'Roboto', sans-serif;
+p,
+h2{
+    font-family: $font;
+}
+
+.alert{
+    width: 92vw;
+    background-color: $deepPurple;
+    color: $fog;
 }
 /*ul.firstChild{
     padding-right:3em;
 }*/
-img{
+/*img{
     float: left;
     @include mediaQry(medium){
         
     }
+}*/
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: $soupyFog;
+
 }
+
+
+
+
+
+

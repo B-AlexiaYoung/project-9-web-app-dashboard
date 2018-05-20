@@ -10,5 +10,9 @@
     @media(min-width: $breakpoint-large){
         @content;
     }
+}@else if $break =="xlarge"{
+    @media(min-width:$breakpoint-xlarge){
+        @content;
+    }
 }
 }

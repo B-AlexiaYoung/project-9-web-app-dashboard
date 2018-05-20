@@ -1,0 +1,393 @@
+// widgets
+
+ /*#trf{
+     //height: 150px;       may not need this one
+     //width: 200px;
+ }*/
+ .trfWrap{
+     //position:relative;
+     height: 20vh;
+     width: 80vw;
+     margin:auto;
+    display:block;
+     @include mediaQry(medium){
+        height: 30%;
+        width: 60%; 
+        margin-bottom: 2em;
+     }
+     @include mediaQry(xlarge){
+        height: 40%;
+        width: 60%; 
+        margin-bottom: 3em;
+
+     }
+ }
+ .button{
+    display:flex;
+    @include mediaQry(medium){
+        display:inline-flex;
+   
+    }
+
+ }
+.btn{
+    display:inline-flex;
+    height:20px;
+    width:25px;
+    background-color: $soupyFog;
+    text-decoration:none;
+    border: 1px solid transparent;
+    border-radius:10px;
+    margin:20px;
+    margin-bottom:10px;
+    @include mediaQry(medium){
+        justify-content:space-between;
+    }
+}
+#makeSmall{
+    
+    display:inline;
+}
+.titleButtonWrap{
+    display:flex;
+    flex-direction:row;
+    height:150px;
+}
+ // daily traffic and mobile graphs
+ #mblChartWrap{
+    display:flex;
+    height: 20vh;
+     width: 80vw;
+    
+ }
+ #rowChart{
+     position: relative;
+     display:flex;
+     flex-direction:row;
+flex-wrap:no-wrap;
+justify-content:space-evenly;
+width:90vw;
+height:40vh;
+align-items:flex-end;
+
+ }
+
+ /*.btnSection{
+     height: 200px;
+     display:inline-block;
+     flex-direction:row;
+     justify-content:space-evenly;
+ }*/
+ .rowTitleBtn{
+     //display:flex;
+     width:80%;
+     @include  mediaQry(medium){
+        display:flex;
+
+         justify-content: space-between;
+     width:95%;
+     }
+ };
+ .lineChart{
+     height: 500px;
+     width:90%;
+ }
+ .tr{
+    //position:relative;
+     height: 70%;
+    width: 50%;
+     display:block;
+     margin:auto;
+     
+     
+     @include mediaQry(medium){
+         position:relative;
+         display:flex;
+         flex-direction:row;
+         justify-content: space-around;
+         align-items:stretch;
+        margin: 2em;
+        margin-top: 7em;
+        height: 70%;
+        width: 35%;
+    }
+     @include mediaQry(xlarge){
+         height: 50%;
+         width:30%;
+     }
+ }
+ .mbl{
+    //position:relative;
+     height: 80%;
+    width: 50%;
+     display:block;
+     margin:auto;
+     
+     
+     @include mediaQry(medium){
+         position:relative;
+         display:flex;
+         flex-direction:row;
+         justify-content: space-around;
+         align-items:stretch;
+        margin: 2em;
+        margin-top: 7em;
+        height: 70%;
+        width: 35%;
+    }
+     @include mediaQry(xlarge){
+         height: 50%;
+         width:30%;
+     }
+ }
+ .divider{
+     border-left:1px solid $deepPurple;
+     height:307px;
+     width:2px;
+ }
+ .title{
+    
+     @include mediaQry(medium){
+     display:inline-block;
+    margin-left:30px;
+     }
+ }
+ .btnRight{
+justify-content:flex-end;
+
+ }
+ #movRight{
+     margin-left:15%;
+     @include mediaQry(medium){
+        margin-left:35%;
+
+     }
+     @include mediaQry(large){
+         margin-left:40%;
+     }
+     @include mediaQry(xlarge){
+        margin-left:50%;
+
+     }
+ }
+ .makeRow{
+     display:flex;
+     flex-direction: row;
+     flex-wrap:wrap;
+     //justify-content: space-around;
+     //background-color: $soupyFog;
+     border-top:1px solid $deepPurple;
+     width:100vw;
+     height:3em;
+    @include mediaQry(medium){
+        width:92vw;
+ 
+    }
+ }
+
+ // social widgets
+
+ .social{
+     height: 400px;
+     @include mediaQry(medium){
+     height:  200px;
+     }
+ }
+ #twit{
+
+    fill: $fog;
+    background-color: $duskyPurple;
+    height:30px;
+    width:30px;
+    margin-left: 25px;
+    margin-top: 25px;
+    @include mediaQry(large){
+
+        height:50px;
+        width:50px;
+    
+    margin-left: 30px;
+    margin-top: 30px;
+    //border-radius:50%;
+    }
+}
+#fcBook{
+    fill: $fog;
+    background-color: $duskyPurple;
+    height:50px;
+    width:40px;
+    margin-left: 12px;
+    margin-top: 12px;
+    @include mediaQry(large){
+
+        height:50px;
+        width:50px;
+    
+    margin-left: 20px;
+    margin-top: 20px;
+}
+}
+#gogl{
+    fill: $fog;
+    background-color: $duskyPurple;
+    height:30px;
+    width:30px;
+    margin-left: 25px;
+    margin-top: 25px;
+    @include mediaQry(large){
+
+        height:50px;
+        width:50px;
+    
+    margin-left: 30px;
+    margin-top: 30px;
+}
+}
+ /*.socialIcons{
+ }*/
+ .round{  
+    background-color: $duskyPurple;
+    border-radius:50%;
+    height: 80px;
+    width: 80px;
+    margin-top:1em;
+    margin-left:1em;
+    margin-right:5px;
+
+    @include mediaQry(large){
+
+    
+    height: 100px;
+    width: 100px;
+    padding:auto;
+    display: inline-flex;
+    flex-direction:row;
+    }
+    @include mediaQry(xlarge){
+        margin-top:.5em;
+        margin-left:.5em;
+    }
+}
+.makeRow{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    @include mediaQry(medium){//display:block;  // mobile content in a column then in tablet and bigger in a row.
+    flex-wrap:nowrap;
+    }
+    //background-color: $duskyPurple;
+    @include mediaQry(large){
+    
+    //height:40vh;
+    flex-wrap:wrap;
+    }
+}
+.makeCol{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    margin-right:10px;
+    margin-top:20px;
+       //margin-left: 1em;
+    //margin-right: 3em;
+    @include mediaQry(large){
+    display:flex;
+    flex-direction:col;
+    //justify-content: space-between;
+    }
+    @include mediaQry(xlarge){
+        //margin-right:4em;
+       
+    }
+}
+.makeArea{
+    display:flex;
+    background-color: $soupyFog;
+    width:100%;
+    height: 7.5em;
+    justify-content: space-around;
+    @include mediaQry(medium){
+        border: 1px solid $deepPurple;
+        border-radius: 10px;
+        margin:5px;
+    }
+    @include mediaQry(large){
+    border-radius:5px;
+    height: 20vh;
+    width: 27vw;
+    border: 1px solid $deepPurple;
+    margin:1em
+    }
+    @include mediaQry(xlarge){
+        width: 26vw;
+    }
+}
+.makeInline{
+    display:inline-block;
+    width:10%;
+    margin:0px;
+    @include mediaQry(large){
+
+    
+    
+    }
+}
+.makeTextPurple{
+    color:$deepPurple;
+}
+.makeNumBig{
+font-size: 30px;
+//margin-right:1em;
+
+}
+
+
+// New Member and Activity Section
+.memberActivity{
+    display:flex;
+    height: 500px;
+    width : 95%;
+    justify-content:space-between;
+    margin-bottom:20px;
+    border-bottom:1px solid $deepPurple;
+    background-color: $soupyFog;
+    padding-right:10px;
+    @include mediaQry(medium){
+        width:45%;
+    }
+}
+.member{
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-content: flex-end;
+}
+.email{
+    font-size:12px;
+    color:$deepPurple;
+}
+.lineAcross{
+    color:$deepPurple;
+    background-color: $deepPurple;
+}
+.inlineMem{
+    display:inline-block;
+    margin-top:0px;
+    margin-bottom:0px;
+    @include mediaQry(medium){
+        margin-left: 20px;
+
+    }
+}
+.inlineEmail{
+    display:inline-block;
+    //margin-left: 20px;
+    margin-top:0px;
+    margin-bottom:0px;
+    @include mediaQry(medium){
+        margin-left: 40px;
+
+    }
+}
+.date{
+    margin-right:10px;
+}

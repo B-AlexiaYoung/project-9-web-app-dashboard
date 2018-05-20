@@ -2,8 +2,7 @@
 .navSvg{
     height: 30px;
     width:30px;
-    fill: #e8e9ed;
-    
+    fill: #e8e9ed;   
 }
 /* nav{
     width:50px;
@@ -16,32 +15,36 @@
     }
 }  */
 // slide in navigation
-#close{
-    
-}
+/*#close{
+ 
+}*/
 #burger{
-    position:fixed;
+    //position:fixed;
+    height: 20px;
+    width:20px;
     z-index:500;
-    @include mediaQry(medium){
+    margin-left: 20px;
+
+   @include mediaQry(medium){
         display:none;
     }
 }
 .sideNav{
-    width:0px;
-    height:100vh;
+    width:100vw;
+    height:0vh;
     background-color: #695384;
     z-index: 1000;
     top: 0;
-    overflow-x: hidden;
+    overflow-y: hidden;
     transition: 0.5s;
     @include mediaQry(medium){
-        width:50px;
+        width:60px;
+        height:100%;
     }
-
 }
 .sideNav a{
     text-decoration:none;
-    transition : .03s
+    transition : .03s;
 }
 .sideNav li:hover{
 border-left: 2px solid #07b710;
@@ -61,5 +64,4 @@ border-left: 2px solid #07b710;
   @include mediaQry(medium){
       display:none;
   }
-
 }
