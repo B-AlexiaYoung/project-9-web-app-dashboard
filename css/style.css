@@ -377,6 +377,12 @@ h2 {
   border-left: 1px solid #695384;
   height: 307px;
   width: 2px; }
+  @media (min-width: 1024px) {
+    .divider {
+      height: 393px; } }
+  @media (min-width: 1500px) {
+    .divider {
+      height: 517px; } }
 
 @media (min-width: 767px) {
   .title {
@@ -541,10 +547,14 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 90vw;
-  height: 40vh; }
+  height: 25%; }
   @media (min-width: 767px) {
     .memActSection {
+      height: 15%;
       flex-direction: row; } }
+  @media (min-width: 1024px) {
+    .memActSection {
+      height: 20%; } }
 
 .memberActivity {
   flex-direction: row;
@@ -554,9 +564,11 @@ h2 {
   @media (min-width: 767px) {
     .memberActivity {
       height: 20vh;
+      margin-left: 10px;
+      border-bottom: 1px solid;
       display: flex;
       flex-direction: row;
-      width: 46vw; } }
+      width: 43vw; } }
 
 .member {
   display: flex;
@@ -568,13 +580,35 @@ h2 {
     .member {
       width: 150px; } }
 
+.memDivider {
+  width: 0px;
+  height: 0px; }
+  @media (min-width: 767px) {
+    .memDivider {
+      height: 83vh;
+      width: 2px;
+      border-left: 1px solid #695384; } }
+  @media (min-width: 1024px) {
+    .memDivider {
+      height: 83vh; } }
+  @media (min-width: 1500px) {
+    .memDivider {
+      height: 83vh; } }
+
+/*.smLine{
+    padding-left:10px;
+    padding-right:10px;
+    margin:0px;
+    display:inline;
+    width: 15px;
+}*/
 .email {
   font-size: 12px;
   color: #695384; }
 
 .lineAcross {
-  color: #695384;
-  background-color: #695384; }
+  color: lightgray;
+  margin-bottom: 0px; }
 
 .inlineMem {
   display: inline-block;
@@ -621,6 +655,9 @@ h2 {
       margin-top: 0px;
       width: 46vw; } }
 
+/*.right{
+    //border-left: 1px solid $deepPurple;
+}*/
 .lftHeight {
   height: 200px; }
 
@@ -649,5 +686,142 @@ h2 {
   @media (min-width: 1024px) {
     .arrow {
       font-size: 30px; } }
+
+.messSettings {
+  margin-top: 20px;
+  width: 90vw;
+  height: 40vh; }
+  @media (min-width: 767px) {
+    .messSettings {
+      display: flex;
+      flex-direction: row; } }
+
+.message {
+  width: 46vw;
+  height: 35vh;
+  background-color: #f6f4f7;
+  margin-right: 20px; }
+
+.settings {
+  width: 46vw;
+  height: 35vh;
+  background-color: #f6f4f7;
+  margin-left: 20px; }
+
+#search {
+  border: 1px solid;
+  border-radius: 5px; }
+
+.textArea {
+  border: 1px solid;
+  border-radius: 5px; }
+
+.buttonSend {
+  background-color: #695384;
+  color: white; }
+
+#search,
+.buttonSend {
+  width: 95vw;
+  height: 30px;
+  margin-bottom: 20px; }
+  @media (min-width: 767px) {
+    #search,
+    .buttonSend {
+      width: 35vw;
+      height: 40px;
+      margin-left: 20px; } }
+
+.textArea {
+  width: 95vw;
+  height: 150px;
+  margin-bottom: 20px; }
+  @media (min-width: 767px) {
+    .textArea {
+      width: 35vw;
+      height: 100px;
+      margin-left: 20px; } }
+
+.msDivider {
+  height: 60px;
+  width: 0px; }
+  @media (min-width: 767px) {
+    .msDivider {
+      height: 45vh;
+      width: 2px;
+      border-left: 1px solid; } }
+
+.box {
+  display: flex;
+  flex-direction: row; }
+
+/*.togBox{
+    height:200px;
+
+}*/
+.pBox {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap; }
+
+.sliderBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.inlineSlider {
+  display: inline; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #695384;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #2196F3; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px); }
+
+/* Rounded sliders */
+.slider.rounded {
+  border-radius: 34px; }
+
+.slider.rounded:before {
+  border-radius: 50%; }
 
 /*# sourceMappingURL=style.css.map */
