@@ -546,6 +546,9 @@ align-items: space-between;      // margin-left: 20px;
        display:flex; 
        flex-direction:row;
     }
+    @include mediaQry(large){
+        height:45vh;
+     }
 }
 .message{
     width: 46vw;
@@ -555,10 +558,15 @@ align-items: space-between;      // margin-left: 20px;
     margin-right:20px;
 }
 .settings{
-    width: 46vw;
+    width: 95vw;
     height: 35vh;
     background-color:$soupyFog;
     margin-left: 20px;
+
+    @include mediaQry(medium){
+    width: 46vw;
+    height: 35vh;
+    }
     //flex-direction:column;
 }
 
@@ -633,12 +641,50 @@ align-items: space-between;      // margin-left: 20px;
 .inlineSlider{
     display:inline; 
 }
+.zone{
+    display:flex;
+    //width:200px;
+    //flex-direction:flex-end;
+}
 /* The switch - the box around the slider */
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 25px;
+  }
+  .timeZone{
+      width:280px;
+      height:30px;
+      border-radius:5px;
+      @include mediaQry(medium){
+        width: 320px;
+       // height:30px;
+    }
+
+      @include mediaQry(large){
+          width: 420px;
+      }
+  }
+  .saveCancel{
+      display:inline-block;
+      width: 140px;
+      height:30px;
+      border-radius:5px;
+      background-color:$deepPurple;
+      color:white;
+      text-align:center;
+      padding-top: 5px;
+      @include mediaQry(medium){
+          width: 160px;
+          margin-top:70px;
+
+      }
+      @include mediaQry(large){
+        width: 210px;
+        margin-top:70px;
+
+    }
   }
 /* Hide default HTML checkbox */
 .switch input {display:none;}
