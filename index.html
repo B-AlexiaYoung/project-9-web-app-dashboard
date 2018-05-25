@@ -25,7 +25,7 @@
             </div> <!--end co-->
         </div>  <!--end wrapper-->
         <div class="wrapHead">    
-            <img class ="smIcons" src="icons/icon-bell.svg" alt="bell icon">
+            <img id="bell"class ="smIcons" src="icons/icon-bell.svg" alt="bell icon">
             <p id="pipe"></p>    
             <img id ="avatar"class="smPhotos"src="images/man5.jpg" alt="user image">   
             <h3 id="member">Ben Haskin</h3>                     
@@ -83,6 +83,7 @@
             <h3>Dashboard</h3>
             <label for="search"></label>
             <input id="search" type="search" name="search-box" placeholder="Search" />
+            <span id="popText"></span>
             <p class="alert">Alert</p>   
             <div>   <!--Keep in for navigation-->
                 <div class="titleButtonWrap">
@@ -90,10 +91,10 @@
                     <div class="rowTitleBtn">
                         <p id="makeSmall">  TRAFFIC</p> 
                         <div class="button">
-                            <a class="btn" href="http://">Hourly</a>
-                            <a class="btn" href="http://">Daily</a>
-                            <a class="btn" href="http://">Weekly</a>
-                            <a class="btn" href="http://">Monthly</a>
+                            <a id="hr"class="btn" href="#">Hourly</a>
+                            <a id="dl" class="btn" href="#">Daily</a>
+                            <a  id="wk" class="btn" href="#">Weekly</a>
+                            <a id="mt" class="btn" href="#">Monthly</a>
                         </div> <!--end button-->
 
 
