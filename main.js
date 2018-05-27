@@ -458,6 +458,5 @@ let cancelBtn=document.getElementById("cancelbtn");
         checkEmail.checked = false;
         checkPub.checked = false;
         tZone.value = '';
-        localStorage.clear();
 
 })
