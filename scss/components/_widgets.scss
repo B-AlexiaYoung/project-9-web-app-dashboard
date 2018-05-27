@@ -69,9 +69,12 @@ justify-content:space-evenly;
 width:90vw;
 height:40vh;
 align-items:flex-end;
+@include mediaQry(medium){
+    height:45vh;
+}
 @include mediaQry(xlarge){
     margin-bottom:20px;
-    height:48vh;
+    height:45vh;
 }
  }
 
@@ -807,4 +810,3 @@ input:checked + .slider:before {
 }
 
 
-// ======   pop up   =======

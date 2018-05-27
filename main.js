@@ -284,7 +284,6 @@ noPop.addEventListener('click', event =>{
 
 // Autocomplete search
 
-//Keycodes 13 = enter, 38 =  up arrow, 40 =  down arrow
 //let searchTerm = document.getElementById('search').innerText;
 let search = document.getElementById("search");
 let results = document.getElementById("results");

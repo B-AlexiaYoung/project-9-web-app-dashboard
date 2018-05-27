@@ -196,7 +196,7 @@ h2 {
   text-align: left;
   border-radius: 5px;
   padding: 5px;
-  margin-left: -250px;
+  margin-left: 10px;
   position: absolute;
   z-index: 3000;
   border-style: solid;
@@ -367,10 +367,13 @@ h2 {
   width: 90vw;
   height: 40vh;
   align-items: flex-end; }
+  @media (min-width: 767px) {
+    #rowChart {
+      height: 45vh; } }
   @media (min-width: 1500px) {
     #rowChart {
       margin-bottom: 20px;
-      height: 48vh; } }
+      height: 45vh; } }
 
 /*.btnSection{
     height: 200px;
