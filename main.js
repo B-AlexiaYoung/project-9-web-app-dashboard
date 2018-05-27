@@ -260,25 +260,25 @@ mt.addEventListener('click', (event) => {
 });
 // alerts
 let bell= document.getElementById('bell');
-bell.addEventListener('click',(event) => {
-    console.log("pop"); 
-let popText=document.getElementById('popText');
+    bell.addEventListener('click',(event) => {
+        //console.log("pop"); 
+        let popText=document.getElementById('popText');
 
-if (popText.innerHTML == ""){
-    popText.classList.add("popUpText");
-    popText.innerHTML= "You have new messages. You have a new mention in chat.";
-    popText.style.visibility="visible";
-} else {
-    popText.classList.remove('popUpText');
+        if (popText.innerHTML == ""){
+            popText.classList.add("popUpText");
+            popText.innerHTML= "You have new messages. You have a new mention in chat.";
+            popText.style.visibility="visible";
+        } else {
+            popText.classList.remove('popUpText');
 
-    popText.style.visibility="hidden";
-};
-});
+            popText.style.visibility="hidden";
+        };
+    });
 
 let noPop = document.getElementById('popText');
-noPop.addEventListener('click', event =>{
-    popText.classList.remove('popUpText');
-    popText.style.visibility = "hidden";
+    noPop.addEventListener('click', event =>{
+        popText.classList.remove('popUpText');
+        popText.style.visibility = "hidden";
 });
 
 
@@ -287,15 +287,13 @@ noPop.addEventListener('click', event =>{
 //let searchTerm = document.getElementById('search').innerText;
 let search = document.getElementById("search");
 let results = document.getElementById("results");
-let members =['Alex Young','Vitoria Chambers','Dan Oliver', 'Dawn Wood','Dale Byrd','Dave Lister','Spider Man', 'Luke Skywalker','James Bond', 'Col Mustard']
+let members =['Charlis Marl','Vitoria Chambers','Dan Oliver', 'Dawn Wood','Dale Byrd','Dave Lister','Spider Man', 'Luke Skywalker','James Bond', 'Col Mustard']
 match = [];
 let rsltsCursor= 0;
+
 //add listener on search box
 
-
-
 let searchBox= document.getElementById("search");
-
 
 searchBox.addEventListener('keyup', event => {
     
@@ -310,7 +308,8 @@ searchBox.addEventListener('keyup', event => {
         }
         
         
-         }); // end searchBox listener
+}); // end searchBox listener
+//populate searchbox
 results.addEventListener('click', (event) => {
 searchBox.value = event.target.innerHTML;
 });
@@ -328,7 +327,6 @@ searchBox.value = event.target.innerHTML;
  //find matched result
  function foundMatch(searchTerm){
     let list=[];
-    //let searchTerm = document.getElementById('search').innerText;
     for (let i=0; i< members.length; i++){
         if (members[i].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ){
         list.push(members[i]);
@@ -354,36 +352,28 @@ hideShow('show');
 // send message listener
 let send =document.getElementById("send");
 send.addEventListener('click', (event) =>{
-    //user.setAttribute("placeholder", "Search for user");
-
-    //messageUser.setAttribute("placeholder", "Message Sent");
-
-    console.log("listner");
-    //event.preventDefault();
+    
+    //console.log("listner");
     let user=document.getElementById('user');
     let messageUser=document.getElementById('messageUser');
     console.log(user.value);
 
 if (user.value == ""){
-    console.log("none");
-     //user.setAttribute("placeholder", "Enter Name of recipient");
+    //console.log("none");
     user.setAttribute("placeholder", "Enter Name of recipient");
      user.style.border = "1px solid red";
 } else if( messageUser.value == ""){
-    console.log("none2");
-    //messageUser.setAttribute("placeholder", "Enter your message");
+    //console.log("none2");
 
     messageUser.setAttribute("placeholder", "Type your message here");
     messageUser.style.border = "1px solid red";
 
 } else {
 
-messageUser.setAttribute("placeholder", "Message Sent");
+    messageUser.setAttribute("placeholder", "Message Sent");
     
     event.preventDefault();
-    //user.setAttribute("placeholder", "Search for user");
-
-    //messageUser.setAttribute("placeholder", "Message for user");
+    
 };
 });
 
@@ -404,14 +394,14 @@ notice.innerHTML="";
 let savebtn= document.getElementById("savebtn");
 savebtn.addEventListener('click', (event) => {
     checkEmail=document.getElementById("checkEmail");
-console.log(checkEmail.checked);
-let checkPub=document.getElementById("checkPub");
-let setTZone=document.getElementById("setTZone");
+    //console.log(checkEmail.checked);
+    let checkPub=document.getElementById("checkPub");
+    let setTZone=document.getElementById("setTZone");
 
-console.log(setTZone.selectedOptions[0].text);
-localStorage.setItem('email', checkEmail.checked );
-localStorage.setItem('public', checkPub.checked );
-localStorage.setItem('tZone', setTZone.selectedOptions[0].value );
+    //console.log(setTZone.selectedOptions[0].text);
+    localStorage.setItem('email', checkEmail.checked );
+    localStorage.setItem('public', checkPub.checked );
+    localStorage.setItem('tZone', setTZone.selectedOptions[0].value );
 
 });
 window.onload= () =>{

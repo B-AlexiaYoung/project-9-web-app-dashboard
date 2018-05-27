@@ -1,11 +1,7 @@
 // widgets
 
- /*#trf{
-     //height: 150px;       may not need this one
-     //width: 200px;
- }*/
+ 
  .trfWrap{
-     //position:relative;
      height: 20%;
      width: 80%;
      margin:auto;
@@ -78,14 +74,8 @@ align-items:flex-end;
 }
  }
 
- /*.btnSection{
-     height: 200px;
-     display:inline-block;
-     flex-direction:row;
-     justify-content:space-evenly;
- }*/
+ 
  .rowTitleBtn{
-     //display:flex;
      width:80%;
      @include  mediaQry(medium){
         display:flex;
@@ -100,10 +90,8 @@ align-items:flex-end;
  .lineChart{
      height: 500px;
      
-     //width:90%;
  }
  .tr{
-    //position:relative;
      height: 70%;
     width: 50%;
      display:block;
@@ -127,7 +115,6 @@ align-items:flex-end;
      }
  }
  .mbl{
-    //position:relative;
      height: 80%;
     width: 50%;
      display:block;
@@ -152,7 +139,6 @@ align-items:flex-end;
  }
  .divider{
      border-left:1px solid $deepPurple;
-     //height:307px;
      height: 123.5%;
      width:2px;
      @include mediaQry(medium){
@@ -160,11 +146,9 @@ align-items:flex-end;
 
      }
      @include mediaQry(large){
-         //height:393px;
          height:112%;
      }
      @include mediaQry(xlarge){
-        //height:517px;
         height:108.5%;
     }
  }
@@ -197,8 +181,6 @@ justify-content:flex-end;
      display:flex;
      flex-direction: row;
      flex-wrap:wrap;
-     //justify-content: space-around;
-     //background-color: $soupyFog;
      border-top:1px solid $deepPurple;
      width:100vw;
      height:3em;
@@ -235,7 +217,6 @@ justify-content:flex-end;
     
     margin-left: 30px;
     margin-top: 30px;
-    //border-radius:50%;
     }
 }
 #fcBook{
@@ -270,8 +251,7 @@ justify-content:flex-end;
     margin-top: 30px;
 }
 }
- /*.socialIcons{
- }*/
+ 
  .round{  
     background-color: $duskyPurple;
     border-radius:50%;
@@ -302,10 +282,8 @@ justify-content:flex-end;
     @include mediaQry(medium){//display:block;  // mobile content in a column then in tablet and bigger in a row.
     flex-wrap:nowrap;
     }
-    //background-color: $duskyPurple;
     @include mediaQry(large){
     
-    //height:40vh;
     flex-wrap:wrap;
     }
 }
@@ -315,17 +293,12 @@ justify-content:flex-end;
     flex-wrap:wrap;
     margin-right:10px;
     margin-top:20px;
-       //margin-left: 1em;
-    //margin-right: 3em;
+     
     @include mediaQry(large){
     display:flex;
     flex-direction:col;
-    //justify-content: space-between;
     }
-    @include mediaQry(xlarge){
-        //margin-right:4em;
-       
-    }
+    
 }
 .makeArea{
     display:flex;
@@ -365,7 +338,6 @@ justify-content:flex-end;
 }
 .makeNumBig{
 font-size: 30px;
-//margin-right:1em;
 
 }
 
@@ -385,18 +357,14 @@ font-size: 30px;
 
     }
     
-   // flex-direction:colunn;
 }
 .memberActivity{
     flex-direction:row;
     height: 40vh;
     width : 90vw;
     padding:10px;
-    //justify-content:space-between;
-    //margin-bottom:20px;
-    //border-bottom:1px solid $deepPurple;
+    
     background-color: $soupyFog;
-    //padding-right:10px;
     @include mediaQry(medium){
         height: 20vh;
         margin-left:10px;
@@ -417,7 +385,6 @@ border-bottom: 1px solid;
 
     @include mediaQry(medium){
         width:150px;
-    //margin-right:50px;
     }
 }  
 .memDivider{
@@ -437,13 +404,7 @@ border-bottom: 1px solid;
     }
     
 }
-/*.smLine{
-    padding-left:10px;
-    padding-right:10px;
-    margin:0px;
-    display:inline;
-    width: 15px;
-}*/
+
 .email{
     font-size:12px;
     color:$deepPurple;
@@ -464,25 +425,18 @@ align-items: space-between;      // margin-left: 20px;
 }
 .inlineEmail{
     display:inline-block;
-    //margin-left: 20px;
     margin-top:0px;
     margin-bottom:0px; 
-    //margin-left:30px;
-    //margin-right:10px;
-    @include mediaQry(medium){
-        //margin-left: 20px;
-
-    }
+    
+    
 }
 .memCol{
     width:150px;
     @include mediaQry(large){
-    //display:flex;
 
     flex-direction:col;
     flex-wrap:wrap;
     width: 200px;
-    //align-items:flex-end;
 }
 }
 .date{
@@ -512,20 +466,15 @@ align-items: space-between;      // margin-left: 20px;
         height:500px;
         margin-top:0px;
         width:46vw;
-//display:flex;
-
     }
 }
-/*.right{
-    //border-left: 1px solid $deepPurple;
-}*/
+
 .lftHeight{
     height: 200px;
 }
 .fit{
     display:block;
     flex-direction:row;
-    //flex-wrap:wrap;
 
 @include mediaQry(medium){
         display:inline;
@@ -534,7 +483,6 @@ align-items: space-between;      // margin-left: 20px;
 }
 .fitRight{
     display:block;
-    //margin-right:30px;
     flex-direction:row;
 
 @include mediaQry(medium){
@@ -557,9 +505,8 @@ align-items: space-between;      // margin-left: 20px;
 // message and settings section
 
 .messSettings{
-    margin-top:60px;
+    margin-top:80px;
     width: 90vw;
-    //height: 50vh;
     @include mediaQry(medium){
         margin-top:-30px;
 
@@ -575,7 +522,6 @@ align-items: space-between;      // margin-left: 20px;
 .message{
     width: 46vw; 
     background-color:$soupyFog;
-    //flex-direction:column;
     margin-right:20px;
     @include mediaQry(medium){
         height: 35vh;
@@ -596,44 +542,9 @@ align-items: space-between;      // margin-left: 20px;
     height: 35vh;
     margin-top:0px;
     }
-    //flex-direction:column;
 }
-/*form{
-    height: 35vh;
-}*/
 
 
-//search box and search results styles
-/*#search{
-    border: 1px solid;
-    border-radius:5px;
-}
-.results{
-    display:hidden;
-    width: 95vw;
-    min-height:30px;
-    margin-bottom: 20px;
-    overflow:scroll;
-    max-height:330px;
-    @include mediaQry(medium){
-        width:35vw;
-        height:40px;
-        margin-left:20px;
-        margin-top:28px;
-    }
-}
-.results.open{
-display:block;
-}
-.results li{
-    padding:20px 10px;
-    cursor:pointer;
-    transition: all 0.1s;
-    font-size:12px;
-}
-.results li:hover{
-    background :$duskyFog;
-}*/
 .buttonSend{
     background-color:$deepPurple;
     color:white;
@@ -681,7 +592,6 @@ display:block;
     height:60px;
     width:0px;
     @include mediaQry(medium){
-    //height: 45vh;
     height:170%;
     width:2px;
     margin-top:-14%;
@@ -693,10 +603,7 @@ display:block;
     flex-direction:row;
 }
 
-/*.togBox{
-    height:200px;
 
-}*/
 .pBox{
     width: 200px;
     display: flex;
@@ -715,8 +622,7 @@ display:block;
 }
 .zone{
     display:flex;
-    //width:200px;
-    //flex-direction:flex-end;
+    
 }
 /* The switch - the box around the slider */
 .switch {
@@ -731,7 +637,6 @@ display:block;
       border-radius:5px;
       @include mediaQry(medium){
         width: 320px;
-       // height:30px;
     }
 
       @include mediaQry(large){

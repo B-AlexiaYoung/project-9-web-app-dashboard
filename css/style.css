@@ -247,19 +247,6 @@ h2 {
   width: 30px;
   fill: #e8e9ed; }
 
-/* nav{
-    width:50px;
-    background-color: #695384;
-    height:100vh;
-}*/
-/*.hide{
-    @include mediaQry(medium){
-        display:none;
-    }
-}  */
-/*#close{
- 
-}*/
 #burger {
   height: 20px;
   width: 20px;
@@ -305,10 +292,6 @@ h2 {
     .close-icon {
       display: none; } }
 
-/*#trf{
-    //height: 150px;       may not need this one
-    //width: 200px;
-}*/
 .trfWrap {
   height: 20%;
   width: 80%;
@@ -375,12 +358,6 @@ h2 {
       margin-bottom: 20px;
       height: 45vh; } }
 
-/*.btnSection{
-    height: 200px;
-    display:inline-block;
-    flex-direction:row;
-    justify-content:space-evenly;
-}*/
 .rowTitleBtn {
   width: 80%; }
   @media (min-width: 767px) {
@@ -533,8 +510,6 @@ h2 {
       margin-left: 30px;
       margin-top: 30px; } }
 
-/*.socialIcons{
-}*/
 .round {
   background-color: #8166a3;
   border-radius: 50%;
@@ -664,13 +639,6 @@ h2 {
     .memDivider {
       height: 83vh; } }
 
-/*.smLine{
-    padding-left:10px;
-    padding-right:10px;
-    margin:0px;
-    display:inline;
-    width: 15px;
-}*/
 .email {
   font-size: 12px;
   color: #695384; }
@@ -728,9 +696,6 @@ h2 {
       margin-top: 0px;
       width: 46vw; } }
 
-/*.right{
-    //border-left: 1px solid $deepPurple;
-}*/
 .lftHeight {
   height: 200px; }
 
@@ -761,7 +726,7 @@ h2 {
       font-size: 30px; } }
 
 .messSettings {
-  margin-top: 60px;
+  margin-top: 80px;
   width: 90vw; }
   @media (min-width: 767px) {
     .messSettings {
@@ -796,39 +761,6 @@ h2 {
       height: 35vh;
       margin-top: 0px; } }
 
-/*form{
-    height: 35vh;
-}*/
-/*#search{
-    border: 1px solid;
-    border-radius:5px;
-}
-.results{
-    display:hidden;
-    width: 95vw;
-    min-height:30px;
-    margin-bottom: 20px;
-    overflow:scroll;
-    max-height:330px;
-    @include mediaQry(medium){
-        width:35vw;
-        height:40px;
-        margin-left:20px;
-        margin-top:28px;
-    }
-}
-.results.open{
-display:block;
-}
-.results li{
-    padding:20px 10px;
-    cursor:pointer;
-    transition: all 0.1s;
-    font-size:12px;
-}
-.results li:hover{
-    background :$duskyFog;
-}*/
 .buttonSend {
   background-color: #695384;
   color: white;
@@ -885,10 +817,6 @@ display:block;
   display: flex;
   flex-direction: row; }
 
-/*.togBox{
-    height:200px;
-
-}*/
 .pBox {
   width: 200px;
   display: flex;
