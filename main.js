@@ -258,17 +258,17 @@ mt.addEventListener('click', (event) => {
    
 
 });
-
+// alerts
 let bell= document.getElementById('bell');
 bell.addEventListener('click',(event) => {
     console.log("pop"); 
 let popText=document.getElementById('popText');
 
-if (popText.style.visibility="hidden"){
+if (popText.innerHTML == ""){
     popText.classList.add("popUpText");
-    popText.innerHTML= "You have new messages, You have a new mention in chat";
+    popText.innerHTML= "You have new messages. You have a new mention in chat.";
     popText.style.visibility="visible";
-} else if (popText.style.visibility="visible"){
+} else {
     popText.classList.remove('popUpText');
 
     popText.style.visibility="hidden";
@@ -280,3 +280,184 @@ noPop.addEventListener('click', event =>{
     popText.classList.remove('popUpText');
     popText.style.visibility = "hidden";
 });
+
+
+// Autocomplete search
+
+//Keycodes 13 = enter, 38 =  up arrow, 40 =  down arrow
+//let searchTerm = document.getElementById('search').innerText;
+let search = document.getElementById("search");
+let results = document.getElementById("results");
+let members =['Alex Young','Vitoria Chambers','Dan Oliver', 'Dawn Wood','Dale Byrd','Dave Lister','Spider Man', 'Luke Skywalker','James Bond', 'Col Mustard']
+match = [];
+let rsltsCursor= 0;
+//add listener on search box
+
+
+
+let searchBox= document.getElementById("search");
+
+
+searchBox.addEventListener('keyup', event => {
+    
+    console.log ("listener")
+    results.innerHTML="";  // reset results
+       hideShow('hide'); 
+       if (searchBox.value.length > 0){
+         match = foundMatch(searchBox.value);   
+         if (match.length > 0) {
+            showMatch(match);
+         }
+        }
+        
+        
+         }); // end searchBox listener
+results.addEventListener('click', (event) => {
+searchBox.value = event.target.innerHTML;
+});
+
+// hide or show results
+ function hideShow(action) {
+     if(action == 'show'){
+         results.classList.add('show')
+     } else if (action == 'hide'){
+         results.classList.remove('show')
+     }
+
+ };
+
+ //find matched result
+ function foundMatch(searchTerm){
+    let list=[];
+    //let searchTerm = document.getElementById('search').innerText;
+    for (let i=0; i< members.length; i++){
+        if (members[i].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ){
+        list.push(members[i]);
+      }
+    }
+      return list;
+ };
+
+ 
+
+// show match results to user
+function showMatch(list){
+let counter = 0;
+
+while (counter < list.length){
+    results.innerHTML += '<li>' + list[counter] + '</li>';
+    counter ++;
+}
+hideShow('show');
+};
+
+
+// send message listener
+let send =document.getElementById("send");
+send.addEventListener('click', (event) =>{
+    //user.setAttribute("placeholder", "Search for user");
+
+    //messageUser.setAttribute("placeholder", "Message Sent");
+
+    console.log("listner");
+    //event.preventDefault();
+    let user=document.getElementById('user');
+    let messageUser=document.getElementById('messageUser');
+    console.log(user.value);
+
+if (user.value == ""){
+    console.log("none");
+     //user.setAttribute("placeholder", "Enter Name of recipient");
+    user.setAttribute("placeholder", "Enter Name of recipient");
+     user.style.border = "1px solid red";
+} else if( messageUser.value == ""){
+    console.log("none2");
+    //messageUser.setAttribute("placeholder", "Enter your message");
+
+    messageUser.setAttribute("placeholder", "Type your message here");
+    messageUser.style.border = "1px solid red";
+
+} else {
+
+messageUser.setAttribute("placeholder", "Message Sent");
+    
+    event.preventDefault();
+    //user.setAttribute("placeholder", "Search for user");
+
+    //messageUser.setAttribute("placeholder", "Message for user");
+};
+});
+
+
+
+
+// close Alert listener
+$closeAlert=document.getElementById("closeAlert");
+closeAlert.addEventListener ('click', (event) => {
+$notice=document.getElementById("notice");
+closeAlert.style.visibility="hidden";
+console.log(notice);
+notice.innerHTML="";
+});
+
+
+//listener for local storage
+let savebtn= document.getElementById("savebtn");
+savebtn.addEventListener('click', (event) => {
+    checkEmail=document.getElementById("checkEmail");
+console.log(checkEmail.checked);
+let checkPub=document.getElementById("checkPub");
+let setTZone=document.getElementById("setTZone");
+
+console.log(setTZone.selectedOptions[0].text);
+localStorage.setItem('email', checkEmail.checked );
+localStorage.setItem('public', checkPub.checked );
+localStorage.setItem('tZone', setTZone.selectedOptions[0].value );
+
+});
+window.onload= () =>{
+if (localStorageExists()){
+let localEmail =localStorage.getItem('email');
+let localPub =localStorage.getItem('public');
+let localTZone =localStorage.getItem('tZone');
+
+console.log(localEmail);
+console.log(localPub);
+console.log(localTZone);
+    if (localEmail !== null){
+     let   checkEmail=document.getElementById("checkEmail");
+        checkEmail.checked = (localEmail==='true');
+    };
+    if (localPub !== null){
+    let    checkPub=document.getElementById("checkPub");
+        checkPub.checked = (localPub==='true');
+    }
+    if (localTZone !== null){
+     let   tZone=document.getElementById("setTZone");
+        tZone.value = localTZone;
+    }
+
+}
+}
+
+//check if local storage is available
+function localStorageExists(){
+    try{
+    return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+
+// reset settings
+let cancelBtn=document.getElementById("cancelbtn");
+    cancelBtn.addEventListener("click", (event) =>{
+        let   checkEmail=document.getElementById("checkEmail");
+        let  checkPub=document.getElementById("checkPub");
+        let   tZone=document.getElementById("setTZone");
+        checkEmail.checked = false;
+        checkPub.checked = false;
+        tZone.value = '';
+        localStorage.clear();
+
+})

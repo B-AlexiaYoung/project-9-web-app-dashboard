@@ -180,8 +180,12 @@ h2{
 
 .alert{
     width: 92vw;
+    height: .5%;
     background-color: $deepPurple;
     color: $fog;
+}
+#closeAlert{
+    margin-left: 20px;
 }
 /*ul.firstChild{
     padding-right:3em;

@@ -81,10 +81,17 @@
     </div>  <!-- end container-->
     <main>  <!--insert dashboard and search here-->
             <h3>Dashboard</h3>
+            <div class="searchContainer">
+            <form action="">
             <label for="search"></label>
-            <input id="search" type="search" name="search-box" placeholder="Search" />
+            <input id="search" type="search" name="search-box" placeholder="Search" autocomplete="off"/>
+           </form>
+           <ul id="results">
+
+           </ul>
+            </div>
             <span id="popText"></span>
-            <p class="alert">Alert</p>   
+            <p id="notice" class="alert">Alert <span id="closeAlert">&times;</span></p>   
             <div>   <!--Keep in for navigation-->
                 <div class="titleButtonWrap">
 
@@ -283,13 +290,13 @@
 
                             <div class="messSettings">
                                 <div class="message"> 
-                                        <p>MESSAGE USER</p>   
+                                        <p id="mesTitle">MESSAGE USER</p>   
 
                                         <form action="index.html" method="post">
-                                            <input id="search" type="text"  name="user_search" placeholder="Search for user">
-                                            <textarea  class="textArea" id="messageUser" name="topics" placeholder="Message for user"></textarea>
+                                            <input id="user" type="text"  name="user_search" placeholder="Search for user" required>
+                                            <textarea  class="textArea" id="messageUser" name="topics" placeholder="Message for user" required></textarea>
                                         <br>
-                                            <button class="buttonSend" type="submit">Send</button>
+                                            <button id="send" class="buttonSend" type="submit">Send</button>
                                             </form>
                                 </div> <!--end message-->
                                 <div class='msDivider'>
@@ -304,19 +311,19 @@
                                     </div>
                                     <div class="sliderBox">
                                     <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider rounded"></span>
+                                            <input id="checkEmail"type="checkbox">
+                                            <span id="emailSlider" class="slider rounded"></span>
                                           </label>
                                     <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider rounded"></span>
+                                            <input id="checkPub" type="checkbox">
+                                            <spanid="pubSlider" class="slider rounded"></span>
                                           </label>
                                           
                                         </div>
                                     </div>
                                     <div class="zone">
-                                            <select class="timeZone" id="timeZone" name="user_timeZone" required>
-                                                    <option value="" disabled selected hidden>Select Timezone</option>
+                                            <select id="setTZone" class="timeZone" name="user_timeZone" required>
+                                                    <option value="" disabled selected>Select Timezone</option>
 
                                                     <option value="Atlantic">Atlantic</option>
                                                     <option value="Eastern">Eastern</option>
@@ -330,8 +337,8 @@
                                                 </select>
                                                 
                                     </div>
-                                    <p class="saveCancel"> SAVE</p>
-                                                <p class="saveCancel">CANCEL</p>
+                                    <p id="savebtn"class="saveCancel"> SAVE</p>
+                                                <p id="cancelbtn" class="saveCancel">CANCEL</p>
                                 </div>
                                 
                                 </div><!--end settings-->
