@@ -517,6 +517,8 @@ align-items: space-between;      // margin-left: 20px;
 
     }
     @include mediaQry(large){
+        margin-top:0px;
+
         height:45vh;
      }
 }

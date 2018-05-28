@@ -768,6 +768,7 @@ h2 {
       height: 50vh; } }
   @media (min-width: 1024px) {
     .messSettings {
+      margin-top: 0px;
       height: 45vh; } }
 
 .message {
