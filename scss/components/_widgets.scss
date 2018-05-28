@@ -505,7 +505,8 @@ align-items: space-between;      // margin-left: 20px;
 // message and settings section
 
 .messSettings{
-    margin-top:80px;
+    //margin-top:80px;
+    margin-top:650px;
     width: 90vw;
     @include mediaQry(medium){
         margin-top:-30px;

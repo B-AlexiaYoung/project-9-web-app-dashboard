@@ -215,13 +215,27 @@ h2 {
 .highlight {
   background-color: #f4d5b0; }
 
+#userUl {
+  display: none;
+  width: 95vw;
+  min-height: 30px;
+  margin-bottom: 20px;
+  overflow: scroll;
+  max-height: 100px; }
+  @media (min-width: 767px) {
+    #userUl {
+      width: 15vw;
+      height: 100px;
+      margin-left: 20px;
+      margin-top: 28px; } }
+
 #results {
   display: none;
   width: 95vw;
   min-height: 30px;
   margin-bottom: 20px;
   overflow: scroll;
-  max-height: 330px; }
+  max-height: 100px; }
   @media (min-width: 767px) {
     #results {
       width: 35vw;
@@ -229,8 +243,23 @@ h2 {
       margin-left: 20px;
       margin-top: 28px; } }
 
+#resultsUser.show {
+  display: block; }
+
 #results.show {
   display: block; }
+
+#resultsUser li {
+  width: 95vw;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-size: 12px;
+  margin: auto; }
+  @media (min-width: 767px) {
+    #resultsUser li {
+      width: 37vw; } }
 
 #results li {
   display: block;
@@ -238,6 +267,9 @@ h2 {
   cursor: pointer;
   transition: all 0.1s;
   font-size: 12px; }
+
+#resultsUser li:hover {
+  background: #f4d5b0; }
 
 #results li:hover {
   background: #f4d5b0; }
@@ -726,7 +758,7 @@ h2 {
       font-size: 30px; } }
 
 .messSettings {
-  margin-top: 80px;
+  margin-top: 650px;
   width: 90vw; }
   @media (min-width: 767px) {
     .messSettings {

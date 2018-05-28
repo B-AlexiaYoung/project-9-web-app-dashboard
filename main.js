@@ -1,15 +1,16 @@
 /*   Variables      */
-$burger= document.getElementById("burger");
-$close= document.getElementById('close');
-$nav = document.getElementById("sdNav");
+/*jshint esversion: 6 */
+let burger= document.getElementById("burger");
+let close= document.getElementById('close');
+let nav = document.getElementById("sdNav");
 
 
 function slideOutNav(){
-    console.log('burger listener')
+    //console.log('burger listener')
     document.getElementById("sdNav").style.height = "60px";
 
 
-};
+}
 // listeners
 
 //listener on burger
@@ -18,8 +19,8 @@ function hideNav() {
     
 }
 
-$burger.addEventListener('click', (event) => {
-    if ($nav.style.height==="60px"){
+burger.addEventListener('click', (event) => {
+    if (nav.style.height==="60px"){
         hideNav();  
     } else{
         slideOutNav();
@@ -27,11 +28,11 @@ $burger.addEventListener('click', (event) => {
 });
 
 // listener on close icon
-$close.addEventListener('click', (event) => {
+close.addEventListener('click', (event) => {
 
     hideNav();
-    $burger.style.visibility="visible";
-    $burger.style.height="20px";
+    burger.style.visibility="visible";
+    burger.style.height="20px";
 });
 
               
@@ -264,7 +265,7 @@ let bell= document.getElementById('bell');
         //console.log("pop"); 
         let popText=document.getElementById('popText');
 
-        if (popText.innerHTML == ""){
+        if (popText.innerHTML === ""){
             popText.classList.add("popUpText");
             popText.innerHTML= "You have new messages. You have a new mention in chat.";
             popText.style.visibility="visible";
@@ -272,13 +273,15 @@ let bell= document.getElementById('bell');
             popText.classList.remove('popUpText');
 
             popText.style.visibility="hidden";
-        };
+        }
     });
 
 let noPop = document.getElementById('popText');
     noPop.addEventListener('click', event =>{
-        popText.classList.remove('popUpText');
-        popText.style.visibility = "hidden";
+        //popText.classList.remove('popUpText');
+        //popText.style.visibility = "hidden";
+        noPop.classList.remove('popUpText');
+        noPop.style.visibility = "hidden";
 });
 
 
@@ -287,17 +290,21 @@ let noPop = document.getElementById('popText');
 //let searchTerm = document.getElementById('search').innerText;
 let search = document.getElementById("search");
 let results = document.getElementById("results");
-let members =['Charlis Marl','Vitoria Chambers','Dan Oliver', 'Dawn Wood','Dale Byrd','Dave Lister','Spider Man', 'Luke Skywalker','James Bond', 'Col Mustard']
-match = [];
+let members =['Charlis Marl','Vitoria Chambers','Dan Oliver', 'Dawn Wood','Dale Byrd','Dave Lister','Spider Man', 'Luke Skywalker','James Bond', 'Col Mustard'];
+let match = [];
 let rsltsCursor= 0;
+let user = document.getElementById("user"); //member input id
+let resultsUser = document.getElementById("resultsUser"); //member ul id
 
-//add listener on search box
 
 let searchBox= document.getElementById("search");
+let schBox= document.getElementById("resultsUser");
+
+//add listener on search box top of page
 
 searchBox.addEventListener('keyup', event => {
     
-    console.log ("listener")
+    //console.log ("listener")
     results.innerHTML="";  // reset results
        hideShow('hide'); 
        if (searchBox.value.length > 0){
@@ -309,20 +316,63 @@ searchBox.addEventListener('keyup', event => {
         
         
 }); // end searchBox listener
-//populate searchbox
+
+//add listener on search box to member section
+
+
+user.addEventListener('keyup', event => {
+    let schBox=document.getElementById('user');
+    //console.log ("meme")
+    resultsUser.innerHTML="";  // reset results
+       hdShow('hide'); 
+       if (schBox.value.length > 0){
+         match = foundMatch(schBox.value);   
+         if (match.length > 0) {
+            shMatch(match);
+         }
+        }
+        
+        
+}); // end searchBox listener for member section
+
+
+
+
+
+
+//populate searchbox for top section
 results.addEventListener('click', (event) => {
 searchBox.value = event.target.innerHTML;
 });
 
-// hide or show results
+//populate searchbox for member section
+resultsUser.addEventListener('click', (event) => {
+    user.value = event.target.innerHTML;
+    });
+
+// hide or show results for top search section
  function hideShow(action) {
      if(action == 'show'){
-         results.classList.add('show')
+         results.classList.add('show');
      } else if (action == 'hide'){
-         results.classList.remove('show')
+         results.classList.remove('show');
      }
 
- };
+ }//end hide or show results for top section
+
+// hide or show results formember section
+function hdShow(action) {
+    if(action == 'show'){
+        resultsUser.classList.add('show');
+    } else if (action == 'hide'){
+        resultsUser.classList.remove('show');
+    }
+
+}// end hide or show results for member section
+
+
+
+
 
  //find matched result
  function foundMatch(searchTerm){
@@ -333,11 +383,11 @@ searchBox.value = event.target.innerHTML;
       }
     }
       return list;
- };
+ }
 
  
 
-// show match results to user
+// show match results to user for top search box
 function showMatch(list){
 let counter = 0;
 
@@ -346,23 +396,33 @@ while (counter < list.length){
     counter ++;
 }
 hideShow('show');
-};
+}
 
-
+// show match results to user for member  search box
+function shMatch(list){
+    let counter = 0;
+    
+    while (counter < list.length){
+        resultsUser.innerHTML += '<li>' + list[counter] + '</li>';
+        counter ++;
+    }
+    hdShow('show');
+    }
+    
 // send message listener
 let send =document.getElementById("send");
 send.addEventListener('click', (event) =>{
-    
+    resultsUser.style.display = "none";
     //console.log("listner");
     let user=document.getElementById('user');
     let messageUser=document.getElementById('messageUser');
     console.log(user.value);
 
-if (user.value == ""){
+if (user.value ===""){
     //console.log("none");
     user.setAttribute("placeholder", "Enter Name of recipient");
      user.style.border = "1px solid red";
-} else if( messageUser.value == ""){
+} else if( messageUser.value === ""){
     //console.log("none2");
 
     messageUser.setAttribute("placeholder", "Type your message here");
@@ -371,17 +431,18 @@ if (user.value == ""){
 } else {
 
     messageUser.setAttribute("placeholder", "Message Sent");
-    
+    user.value="";
+    messageUser.value="";
     event.preventDefault();
     
-};
+}
 });
 
 
 
 
 // close Alert listener
-$closeAlert=document.getElementById("closeAlert");
+closeAlert=document.getElementById("closeAlert");
 closeAlert.addEventListener ('click', (event) => {
 $notice=document.getElementById("notice");
 closeAlert.style.visibility="hidden";
@@ -416,7 +477,7 @@ console.log(localTZone);
     if (localEmail !== null){
      let   checkEmail=document.getElementById("checkEmail");
         checkEmail.checked = (localEmail==='true');
-    };
+    }
     if (localPub !== null){
     let    checkPub=document.getElementById("checkPub");
         checkPub.checked = (localPub==='true');
@@ -427,7 +488,7 @@ console.log(localTZone);
     }
 
 }
-}
+};
 
 //check if local storage is available
 function localStorageExists(){
@@ -448,4 +509,4 @@ let cancelBtn=document.getElementById("cancelbtn");
         checkPub.checked = false;
         tZone.value = '';
 
-})
+});
