@@ -40,19 +40,19 @@ main{
     grid-area:main;
 background-color:$soupyFog;
 width:100vw;
-height:200%;
+// height:200%;
 @include mediaQry(medium){
     width:92vw;
 
 }
 @include mediaQry(large){
  width: 94vw;
- height:150%;
+//  height:150%;
 
 }
 @include mediaQry(xlarge){
     width: 97vw;
-    height:150%;
+    // height:150%;
  
 }
 }

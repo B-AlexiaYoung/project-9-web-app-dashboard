@@ -1,6 +1,6 @@
 // navigation
 .navSvg{
-    height: 30px;
+    //height: 30px;
     width:30px;
     fill: #e8e9ed;   
     
@@ -26,7 +26,7 @@
     transition: 0.5s;
     @include mediaQry(medium){
         width:60px;
-        height:200%;
+        height:100%;
     }
 }
 .sideNav a{

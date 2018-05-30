@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,7 +79,7 @@
     
     </div>  <!-- end container-->
     <main>  <!--insert dashboard and search here-->
-            <h3>Dashboard</h3>
+            <h3 id="dash">Dashboard</h3>
             <div class="searchContainer">
             <form action="index.html">
             <label for="search"></label>
@@ -113,30 +113,39 @@
                             <canvas id="trf"></canvas>
                         </div>
                     </div>
-                    <div class="makeRow">
-                        <p class="title">DAILY TRAFFIC</p>
-                        <p id="movRight" class="title">Mobile USERS</p>
+    <!--                <div class="mkRow">    -->
+
                     </div><!--end makeRow-->
-                    <div id="rowChart">  
-                        <div class="tr">
-                            <canvas id="dailyTrf"></canvas> 
+                    <div id="rowChart">
+                        <div class="tr"> 
+                        <p class="title">DAILY TRAFFIC</p>
+                        <canvas id="dailyTrf" width="300" height="200"></canvas>
                         </div> <!--end tr-->
-                        <div class="divider">
-                        </div><!--end divider-->
-                        <div class="mbl">
-                            <canvas id="mbl"></canvas>
+                   <!--     <div class="divider">
+                        </div><!end divider-->
+                        <div class="tr"> 
+                            <p class="title">Mobile USERS</p>
+
+                            <canvas id="mbl" width="400" height="250"></canvas>
+
                         </div> <!--end mbl-->
                     </div> <!-- end rowChart -->
 
 
                      <!--Social Stats section-->
-                    <div class=" social makeRow">  
+                <div>
+                    <div class="social "> 
+                         <div id="ss">
+                            <h5>SOCIAL STATS</h5>
+                        </div>
+                    <div class="makeRow">
                         <div class="makeArea">
                             <div class="round">
                                 <svg id="twit"  class="socialIcons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                     <path d="M32 3.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.8.8 24 0 22.2 0c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.4-2.2 3.3-3.5z"/>
                                 </svg> 
                             </div>  <!--end round-->
+                            
                             <div class="makeCol">
                                         
                                 <p class="makeInline makeTextPurple">Twitter</p>
@@ -171,8 +180,8 @@
                             </div> <!-- end makeCol-->
                         </div><!--end makeArea-->
 
-                    </div><!--end social makeRow-->
-
+                    </div><!--end social -->
+                </div>
 
 
                     <hr class="lineAcross">
@@ -234,8 +243,8 @@
                                 <p class="fitRight">Recent Activity</p>
                                 <div class="memberActivity"> 
                                     <img  class="smPhotos" src="images/wm52.jpg" alt="dark haired woman">
-                                    <div> 
-                                    <p class="inlineMem">Vitoria Chambers commneted on YourApps SEO"S tips</p>
+                                    <div class="memComment"> 
+                                    <p class="inlineMem">Vitoria Chambers commented on YourApps SEO"S tips</p>
                                         <p class=" inlineEmail">4 hours ago</p>
                                     </div>
                                     <div class="date">
@@ -247,8 +256,8 @@
 
                                     <div class="memberActivity"> 
                                             <img  class="smPhotos" src="images/man27.jpg" alt="dark haired man">
-                                            <div> 
-                                            <p class="inlineMem">Dale Byrd commneted on YourApps SEO"S tips</p>
+                                            <div class="memComment"> 
+                                            <p class="inlineMem">Dale Byrd commented on YourApps SEO"S tips</p>
                                                 <p class=" inlineEmail">4 hours ago</p>
                                             </div>
                                             <div class="date">
@@ -259,7 +268,7 @@
 
                                             <div class="memberActivity"> 
                                                     <img  class="smPhotos" src="images/wm48.jpg" alt="dark haired woman">
-                                            <div> 
+                                            <div class="memComment"> 
                                             <p class="inlineMem">Dawn Wood liked the post's Facebook Changes</p>
                                                 <p class=" inlineEmail">4 hours ago</p>
                                             </div>
@@ -272,8 +281,8 @@
 
                                             <div class="memberActivity"> 
                                                 <img  class="smPhotos" src="images/man43.jpg" alt="dark haired man">
-                                                <div> 
-                                                    <p class="inlineMem">Dan Oliver commneted the post's Facebook Changes</p>
+                                                <div class="memComment"> 
+                                                    <p class="inlineMem">Dan Oliver commented the post's Facebook Changes</p>
                                                     <p class=" inlineEmail">4 hours ago</p>
                                                 </div>
                                                 <div class="date">
@@ -284,6 +293,9 @@
                                     </div> <!--end memActSection  -->
                                 </div>
                             </div> <!--end right-->
+
+                            </div>
+
                             <div></div> 
         
 
@@ -296,10 +308,12 @@
                                             <ul id ="resultsUser"></ul> 
                                             <textarea  class="textArea" id="messageUser" name="topics" placeholder="Message for user" required></textarea>
                                         <br>
-                                            <button id="send" class="buttonSend" type="submit">Send</button>
+                                        <span id="popUp" class="popUpText" >Message sent</span>
+
+                                            <button id="send" class="buttonSend" type="submit">SEND</button>
                                             </form>
                                 </div> <!--end message-->
-                                <div class='msDivider'>
+                          <div class='msDivider'>
 
                                 </div>
                                 <div class="settings">
@@ -339,17 +353,11 @@
                                     </div>
                                     <p id="savebtn" class="saveCancel"> SAVE</p>
                                                 <p id="cancelbtn" class="saveCancel">CANCEL</p>
-                                </div>
-                                
                                 </div><!--end settings-->
-
                                 
-                               
-                            </div> <!--end mesSettings-->
+                               </div><!--end mesSettings-->
 
-
-
-            </div> <!--end keep for navigation-->
+         </div> <!--end keep for navigation-->
 
     </main>   
 

@@ -59,13 +59,12 @@ let trafficLine = new Chart(traffic, {
                 pointBorderColor: ['rgb(68, 56, 73)'],
                 pointBorderWidth: 6,
             }],
-        
+        },
             options: {
                 legend:{
                     display: false,
                 },
             },
-        },
 });
 
 
@@ -147,12 +146,12 @@ dl.addEventListener('click', (event) => {
                     pointBorderWidth: 6,
                 }],
             
+            },
                 options: {
                     legend:{
                         display: false,
                     },
                 },
-            },
     });       
 
 
@@ -180,13 +179,13 @@ let trafficLine = new Chart(traffic, {
                 pointBorderColor: ['rgb(68, 56, 73)'],
                 pointBorderWidth: 6,
             }],
+        },
         
             options: {
                 legend:{
                     display: false,
                 },
             },
-        },
 });
 });
 
@@ -211,12 +210,12 @@ hr.addEventListener('click', (event) => {
                     pointBorderWidth: 6,
                 }],
             
+            },
                 options: {
                     legend:{
                         display: false,
                     },
                 },
-            },
     });       
 
 
@@ -245,12 +244,12 @@ mt.addEventListener('click', (event) => {
                     pointBorderWidth: 6,
                 }],
             
+            },
                 options: {
                     legend:{
                         display: false,
                     },
                 },
-            },
     });       
 
 
@@ -324,6 +323,7 @@ user.addEventListener('keyup', event => {
     let schBox=document.getElementById('user');
     //console.log ("meme")
     resultsUser.innerHTML="";  // reset results
+       
        hdShow('hide'); 
        if (schBox.value.length > 0){
          match = foundMatch(schBox.value);   
@@ -412,10 +412,11 @@ function shMatch(list){
 // send message listener
 let send =document.getElementById("send");
 send.addEventListener('click', (event) =>{
-    resultsUser.style.display = "none";
+    resultsUser.innerHTML = "";
     //console.log("listner");
     let user=document.getElementById('user');
-    let messageUser=document.getElementById('messageUser');
+    
+
     console.log(user.value);
 
 if (user.value ===""){
@@ -428,17 +429,26 @@ if (user.value ===""){
     messageUser.setAttribute("placeholder", "Type your message here");
     messageUser.style.border = "1px solid red";
 
-} else {
-
-    messageUser.setAttribute("placeholder", "Message Sent");
+} else if(messageUser.value !== "" && user.value !=="") {
+    user.setAttribute("placeholder", "Search for user");
+    let popUp = document.getElementById("popUp");
+    popUp.style.visibility="visible";
+    //messageUser.setAttribute("placeholder", "Message Sent");
     user.value="";
     messageUser.value="";
+    user.style.border = "1px solid";
+    messageUser.style.border = "1px solid";
+
     event.preventDefault();
     
 }
 });
 
-
+//Event listener on span for message sent
+let popUp = document.getElementById("popUp");
+popUp.addEventListener("click", (event) =>{
+    popUp.style.visibility="hidden";
+});
 
 
 // close Alert listener
